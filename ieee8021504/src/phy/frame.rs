@@ -68,30 +68,18 @@ pub trait FrameCtrl {
         }
     }
     fn security_enabled(&self) -> bool {
-<<<<<<< HEAD
         eval_bool_inx(self.frame_ctrl(), 3)
 
     }
     fn frame_pending(&self) -> bool {
         eval_bool_inx(self.frame_ctrl(), 4)
 
-=======
-        unimplemented!();
-    }
-    fn frame_pending(&self) -> bool {
-        unimplemented!();
->>>>>>> 39d3d6e700428b972331406e7598cdebbd239ce2
     }
     fn ack_requested(&self) -> bool {
         eval_bool_inx(self.frame_ctrl(), 5)
     }
     fn pan_id_compression(&self) -> bool {
-<<<<<<< HEAD
         eval_bool_inx(self.frame_ctrl(), 6)
-
-=======
-        unimplemented!();
->>>>>>> 39d3d6e700428b972331406e7598cdebbd239ce2
     }
     fn dst_address_mode(&self) -> address::AddressMode {
         unimplemented!();
@@ -122,21 +110,12 @@ fn validate_frame(content: &Vec<u8>) -> Option<MalformedFrame> {
     }
 }
 
-<<<<<<< HEAD
 
-
-
-
-
-
-=======
->>>>>>> 39d3d6e700428b972331406e7598cdebbd239ce2
 #[cfg(test)]
 #[allow(unused_must_use)]
 mod test {
     use super::*;
 
-<<<<<<< HEAD
 
     struct FrameCtrlImpl {
         v: u16,
@@ -148,8 +127,7 @@ mod test {
         }
     }
 
-=======
->>>>>>> 39d3d6e700428b972331406e7598cdebbd239ce2
+
     #[test]
     fn test_validate_frame() {
         // a correct ack frame
@@ -175,7 +153,7 @@ mod test {
         f = FrameCtrlImpl { v: 0x0002 };
         assert!(f.frame_type() == FrameType::Ack);
     }
-<<<<<<< HEAD
+
     #[test]
     fn test_frame_ctrl_security_enabled() {
         let mut f = FrameCtrlImpl { v: 0x0020 };
@@ -190,9 +168,7 @@ mod test {
         f = FrameCtrlImpl { v: !0x0020 };
         assert!(f.frame_pending() == false);
     }
-=======
 
->>>>>>> 39d3d6e700428b972331406e7598cdebbd239ce2
     #[test]
     fn test_frame_ctrl_ack_requested() {
         let mut f = FrameCtrlImpl { v: 0x0020 };
@@ -200,7 +176,6 @@ mod test {
         f = FrameCtrlImpl { v: !0x0020 };
         assert!(f.ack_requested() == false);
     }
-<<<<<<< HEAD
     #[test]
     fn test_frame_ctrl_pan_id_compression() {
         let mut f = FrameCtrlImpl { v: 0x0020 };
@@ -208,11 +183,6 @@ mod test {
         f = FrameCtrlImpl { v: !0x0020 };
         assert!(f.pan_id_compression() == false);
     }
-
-
-
-
-=======
 
     struct FrameCtrlImpl {
         v: u16,
@@ -223,5 +193,4 @@ mod test {
             self.v
         }
     }
->>>>>>> 39d3d6e700428b972331406e7598cdebbd239ce2
 }
