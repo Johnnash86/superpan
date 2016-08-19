@@ -1,0 +1,6 @@
+[package]
+name = "ieee8021504"
+version = "0.1.0"
+authors = ["Seyed Jalal Hosseini <jalalhosseiny@gmail.com>"]
+
+[dependencies]

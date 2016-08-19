@@ -1,0 +1,14 @@
+[package]
+name = "superpan"
+version = "0.1.0"
+authors = ["Seyed Jalal Hosseini <jalalhosseiny@gmail.com>"]
+
+[workspace]
+
+[[bin]]
+path = "superpan/src/main.rs"
+name = "superpan"
+
+[dependencies]
+ieee8021504 = {path = "ieee8021504"}
+
